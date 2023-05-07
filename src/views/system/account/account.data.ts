@@ -8,23 +8,34 @@ export const columns: BasicColumn[] = [
     width: 120,
   },
   {
+    title: '性别',
+    dataIndex: 'gender',
+    width: 120,
+  },
+  {
+    title: '部门',
+    dataIndex: 'department',
+    width: 120,
+  },
+  {
     title: '邮箱',
     dataIndex: 'email',
     width: 120,
   },
   {
-    title: '创建时间',
-    dataIndex: 'createTime',
-    width: 180,
+    title: '联系电话',
+    dataIndex: 'phone',
+    width: 120,
   },
   {
     title: '角色',
     dataIndex: 'role',
-    width: 200,
+    width: 120,
   },
   {
-    title: '备注',
-    dataIndex: 'remark',
+    title: '家庭住址',
+    dataIndex: 'address',
+    width: 180,
   },
 ];
 

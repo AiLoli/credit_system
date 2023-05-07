@@ -10,11 +10,6 @@ export const columns: BasicColumn[] = [
     align: 'left',
   },
   {
-    title: '排序',
-    dataIndex: 'orderNo',
-    width: 50,
-  },
-  {
     title: '状态',
     dataIndex: 'status',
     width: 80,
@@ -78,13 +73,7 @@ export const formSchema: FormSchema[] = [
       },
       getPopupContainer: () => document.body,
     },
-    required: true,
-  },
-  {
-    field: 'orderNo',
-    label: '排序',
-    component: 'InputNumber',
-    required: true,
+    required: false,
   },
   {
     field: 'status',

@@ -1,5 +1,5 @@
 <template>
-  <Card title="销售统计" :loading="loading">
+  <Card title="贷款统计" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -42,9 +42,6 @@
               name: '2017',
             },
             {
-              name: '2017',
-            },
-            {
               name: '2018',
             },
             {
@@ -55,6 +52,9 @@
             },
             {
               name: '2021',
+            },
+            {
+              name: '2022',
             },
           ],
         },
@@ -71,15 +71,8 @@
             },
             data: [
               {
-                value: [90, 50, 86, 40, 50, 20],
-                name: 'Visits',
-                itemStyle: {
-                  color: '#b6a2de',
-                },
-              },
-              {
-                value: [70, 75, 70, 76, 20, 85],
-                name: 'Sales',
+                value: [52, 55, 60, 64, 62, 85],
+                name: '贷款人数(千人)',
                 itemStyle: {
                   color: '#67e0e3',
                 },
