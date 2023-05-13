@@ -2,135 +2,495 @@ import { MockMethod } from 'vite-plugin-mock';
 import { resultError, resultPageSuccess, resultSuccess } from '../_util';
 
 const accountList = (() => {
-  const result: any[] = [];
-  for (let index = 0; index < 20; index++) {
-    result.push({
-      id: `${index}`,
-      account: '@first',
-      email: '@email',
-      nickname: '@cname()',
-      role: '@first',
-      createTime: '@datetime',
-      remark: '@cword(10,20)',
-      'status|1': ['0', '1'],
-    });
-  }
+  const result: any[] = [
+    {
+      id: '1',
+      name: '王皓月',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      department: '华东分部/江苏分部',
+      age: 29,
+      phone: 'xxxxxxxxxxx',
+      role: '员工',
+    },
+    {
+      id: '2',
+      name: '罗成瑜',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      department: '华东分部/江苏分部',
+      age: 25,
+      phone: 'xxxxxxxxxxx',
+      role: '员工',
+    },
+    {
+      id: '3',
+      name: '朱俊橡',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      department: '华东分部/江苏分部',
+      age: 34,
+      phone: 'xxxxxxxxxxx',
+      role: '员工',
+    },
+    {
+      id: '4',
+      name: '袁小涵',
+      email: 'xxxxxxxx@qq.com',
+      gender: '女',
+      department: '华东分部/江苏分部',
+      age: 22,
+      phone: 'xxxxxxxxxxx',
+      role: '员工',
+    },
+  ];
+  return result;
+})();
+
+const userList = (() => {
+  const result: any[] = [
+    {
+      id: '1',
+      name: '张安分',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 29,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '300000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '2',
+      name: '莫邝贤',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 23,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '50000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '3',
+      name: '覃海齐',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 35,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '600000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '4',
+      name: '刘慧娴',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '女',
+      age: 28,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '30000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '5',
+      name: '杨建川',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 23,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '80000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '6',
+      name: '杨芊慧',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '女',
+      age: 26,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '20000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '7',
+      name: '林绮君',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 24,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '80000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '8',
+      name: '宋浩天',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 27,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '100000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '9',
+      name: '林兴钰',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '女',
+      age: 25,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '30000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '10',
+      name: '宋杰彬',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 24,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '30000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '11',
+      name: '罗小波',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 32,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '1000000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+    {
+      id: '12',
+      name: '罗童杰',
+      idCard: 'xxxxxxxxxxxxxxxxxx',
+      email: 'xxxxxxxx@qq.com',
+      gender: '男',
+      age: 29,
+      phone: 'xxxxxxxxxxx',
+      applyAmount: '100000',
+      createTime: '2023-04-30',
+      status: '审核中',
+      remark: '无',
+    },
+  ];
   return result;
 })();
 
 const roleList = (() => {
-  const result: any[] = [];
-  for (let index = 0; index < 4; index++) {
-    result.push({
-      id: index + 1,
-      orderNo: `${index + 1}`,
-      roleName: ['超级管理员', '管理员', '文章管理员', '普通用户'][index],
-      roleValue: '@first',
-      createTime: '@datetime',
-      remark: '@cword(10,20)',
-      menu: [['0', '1', '2'], ['0', '1'], ['0', '2'], ['2']][index],
-      'status|1': ['0', '1'],
-    });
-  }
+  const result: any[] = [
+    {
+      id: 1,
+      orderNo: '1',
+      roleName: '审批领导',
+      roleValue: '1',
+      createTime: '2023-03-01',
+      remark: '无',
+      menu: ['0', '1', '2'],
+      status: '1',
+    },
+    {
+      id: 1,
+      orderNo: '2',
+      roleName: '风险评估员',
+      roleValue: '2',
+      createTime: '2023-03-01',
+      remark: '无',
+      menu: ['0', '1', '2'],
+      status: '1',
+    },
+    {
+      id: 1,
+      orderNo: '3',
+      roleName: '客户经理',
+      roleValue: '3',
+      createTime: '2023-03-01',
+      remark: '无',
+      menu: ['0', '1', '2'],
+      status: '1',
+    },
+  ];
   return result;
 })();
 
 const deptList = (() => {
-  const result: any[] = [];
-  for (let index = 0; index < 3; index++) {
-    result.push({
-      id: `${index}`,
-      deptName: ['华东分部', '华南分部', '西北分部'][index],
-      orderNo: index + 1,
-      createTime: '@datetime',
-      remark: '@cword(10,20)',
-      'status|1': ['0', '0', '1'],
-      children: (() => {
-        const children: any[] = [];
-        for (let j = 0; j < 4; j++) {
-          children.push({
-            id: `${index}-${j}`,
-            deptName: ['研发部', '市场部', '商务部', '财务部'][j],
-            orderNo: j + 1,
-            createTime: '@datetime',
-            remark: '@cword(10,20)',
-            'status|1': ['0', '1'],
-            parentDept: `${index}`,
-            children: undefined,
-          });
-        }
-        return children;
-      })(),
-    });
-  }
+  const result: any[] = [
+    {
+      id: '0',
+      deptName: '华东分部',
+      orderNo: 1,
+      createTime: '2023-03-02',
+      remark: '无',
+      status: '0',
+      children: [
+        {
+          id: '0-0',
+          deptName: '上海分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '0',
+          children: undefined,
+        },
+        {
+          id: '0-1',
+          deptName: '江苏分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '0',
+          children: undefined,
+        },
+        {
+          id: '0-2',
+          deptName: '浙江分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '0',
+          children: undefined,
+        },
+      ],
+    },
+    {
+      id: '1',
+      deptName: '华南分部',
+      orderNo: 2,
+      createTime: '2023-03-02',
+      remark: '无',
+      status: '0',
+      children: [
+        {
+          id: '1-0',
+          deptName: '广东分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '1',
+          children: undefined,
+        },
+        {
+          id: '1-1',
+          deptName: '广西分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '1',
+          children: undefined,
+        },
+        {
+          id: '1-2',
+          deptName: '福建分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '1',
+          children: undefined,
+        },
+      ],
+    },
+    {
+      id: '2',
+      deptName: '西南分部',
+      orderNo: 3,
+      createTime: '2023-03-02',
+      remark: '无',
+      status: '0',
+      children: [
+        {
+          id: '2-0',
+          deptName: '四川分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '2',
+          children: undefined,
+        },
+        {
+          id: '2-1',
+          deptName: '重庆分部',
+          orderNo: 2,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '2',
+          children: undefined,
+        },
+        {
+          id: '2-2',
+          deptName: '贵州分部',
+          orderNo: 1,
+          createTime: '2023-03-02',
+          remark: '无',
+          status: '0',
+          parentDept: '2',
+          children: undefined,
+        },
+      ],
+    },
+  ];
   return result;
 })();
 
 const menuList = (() => {
-  const result: any[] = [];
-  for (let index = 0; index < 3; index++) {
-    result.push({
-      id: `${index}`,
-      icon: ['ion:layers-outline', 'ion:git-compare-outline', 'ion:tv-outline'][index],
+  const result: any[] = [
+    {
+      id: '2',
+      icon: 'ion:settings-outline',
       component: 'LAYOUT',
       type: '0',
-      menuName: ['Dashboard', '权限管理', '功能'][index],
+      menuName: '系统管理',
       permission: '',
-      orderNo: index + 1,
-      createTime: '@datetime',
-      'status|1': ['0', '0', '1'],
-      children: (() => {
-        const children: any[] = [];
-        for (let j = 0; j < 4; j++) {
-          children.push({
-            id: `${index}-${j}`,
-            type: '1',
-            menuName: ['菜单1', '菜单2', '菜单3', '菜单4'][j],
-            icon: 'ion:document',
-            permission: ['menu1:view', 'menu2:add', 'menu3:update', 'menu4:del'][index],
-            component: [
-              '/homepage/welcome/index',
-              '/homepage/analysis/index',
-              '/homepage/workbench/index',
-              '/homepage/test/index',
-            ][j],
-            orderNo: j + 1,
-            createTime: '@datetime',
-            'status|1': ['0', '1'],
-            parentMenu: `${index}`,
-            children: (() => {
-              const children: any[] = [];
-              for (let k = 0; k < 4; k++) {
-                children.push({
-                  id: `${index}-${j}-${k}`,
-                  type: '2',
-                  menuName: '按钮' + (j + 1) + '-' + (k + 1),
-                  icon: '',
-                  permission:
-                    ['menu1:view', 'menu2:add', 'menu3:update', 'menu4:del'][index] +
-                    ':btn' +
-                    (k + 1),
-                  component: [
-                    '/homepage/welcome/index',
-                    '/homepage/analysis/index',
-                    '/homepage/workbench/index',
-                    '/homepage/test/index',
-                  ][j],
-                  orderNo: j + 1,
-                  createTime: '@datetime',
-                  'status|1': ['0', '1'],
-                  parentMenu: `${index}-${j}`,
-                  children: undefined,
-                });
-              }
-              return children;
-            })(),
-          });
-        }
-        return children;
-      })(),
-    });
-  }
+      orderNo: 1,
+      createTime: '2023-03-01',
+      status: '1',
+      children: [
+        {
+          id: '2-1',
+          type: '1',
+          menuName: '账号管理',
+          icon: 'ion:document',
+          permission: '',
+          component: '/system/account',
+          orderNo: 1,
+          createTime: '2023-03-01',
+          status: '1',
+          parentMenu: '2',
+          children: [],
+        },
+        {
+          id: '2-2',
+          type: '1',
+          menuName: '角色管理',
+          icon: 'ion:document',
+          permission: '',
+          component: '/system/role',
+          orderNo: 1,
+          createTime: '2023-03-01',
+          status: '1',
+          parentMenu: '2',
+          children: [],
+        },
+        {
+          id: '2-3',
+          type: '1',
+          menuName: '部门管理',
+          icon: 'ion:document',
+          permission: '',
+          component: '/system/dept',
+          orderNo: 1,
+          createTime: '2023-03-01',
+          status: '1',
+          parentMenu: '2',
+          children: [],
+        },
+      ],
+    },
+    {
+      id: '3',
+      icon: 'ion:card-outline',
+      component: 'LAYOUT',
+      type: '0',
+      menuName: '贷款管理',
+      permission: '',
+      orderNo: 1,
+      createTime: '2023-03-01',
+      status: '1',
+      children: [
+        {
+          id: '3-1',
+          type: '1',
+          menuName: '合同管理',
+          icon: 'ion:document',
+          permission: '',
+          component: '/credit/contract',
+          orderNo: 1,
+          createTime: '2023-03-01',
+          status: '1',
+          parentMenu: '2',
+          children: [],
+        },
+        {
+          id: '3-2',
+          type: '1',
+          menuName: '分风险预测',
+          icon: 'ion:document',
+          permission: '',
+          component: '/credit/forecast',
+          orderNo: 1,
+          createTime: '2023-03-01',
+          status: '1',
+          parentMenu: '2',
+          children: [],
+        },
+        {
+          id: '3-3',
+          type: '1',
+          menuName: '贷款申请',
+          icon: 'ion:document',
+          permission: '',
+          component: '/credit/apply',
+          orderNo: 1,
+          createTime: '2023-03-01',
+          status: '1',
+          parentMenu: '2',
+          children: [],
+        },
+        {
+          id: '3-4',
+          type: '1',
+          menuName: '贷款审批',
+          icon: 'ion:document',
+          permission: '',
+          component: '/credit/approval',
+          orderNo: 1,
+          createTime: '2023-03-01',
+          status: '1',
+          parentMenu: '2',
+          children: [],
+        },
+      ],
+    },
+  ];
   return result;
 })();
 
@@ -142,6 +502,15 @@ export default [
     response: ({ query }) => {
       const { page = 1, pageSize = 20 } = query;
       return resultPageSuccess(page, pageSize, accountList);
+    },
+  },
+  {
+    url: '/basic-api/credit/getUserList',
+    timeout: 100,
+    method: 'get',
+    response: ({ query }) => {
+      const { page = 1, pageSize = 20 } = query;
+      return resultPageSuccess(page, pageSize, userList);
     },
   },
   {

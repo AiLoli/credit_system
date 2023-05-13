@@ -4,17 +4,10 @@ export type ApplyParams = BasicPageParams & {
   name?: string;
 };
 
-export type AccountParams = BasicPageParams & {
-  account?: string;
-  nickname?: string;
+export type UserParams = BasicPageParams & {
+  gender?: string;
+  phone?: string;
 };
-
-export type RoleParams = {
-  roleName?: string;
-  status?: string;
-};
-
-export type RolePageParams = BasicPageParams & RoleParams;
 
 export type DeptParams = {
   deptName?: string;
@@ -26,53 +19,20 @@ export type MenuParams = {
   status?: string;
 };
 
-export interface AccountListItem {
+export interface UserListItem {
   id: string;
-  account: string;
-  email: string;
-  nickname: string;
-  role: number;
+  name: string;
+  idCard: string;
+  gender: string;
+  age: number;
+  phone: string;
+  applyAmount: string;
   createTime: string;
+  status: number;
   remark: string;
-  status: number;
-}
-
-export interface DeptListItem {
-  id: string;
-  orderNo: string;
-  createTime: string;
-  remark: string;
-  status: number;
-}
-
-export interface MenuListItem {
-  id: string;
-  orderNo: string;
-  createTime: string;
-  status: number;
-  icon: string;
-  component: string;
-  permission: string;
-}
-
-export interface RoleListItem {
-  id: string;
-  roleName: string;
-  roleValue: string;
-  status: number;
-  orderNo: string;
-  createTime: string;
 }
 
 /**
  * @description: Request list return value
  */
-export type AccountListGetResultModel = BasicFetchResult<AccountListItem>;
-
-export type DeptListGetResultModel = BasicFetchResult<DeptListItem>;
-
-export type MenuListGetResultModel = BasicFetchResult<MenuListItem>;
-
-export type RolePageListGetResultModel = BasicFetchResult<RoleListItem>;
-
-export type RoleListGetResultModel = RoleListItem[];
+export type UserListGetResultModel = BasicFetchResult<UserListItem>;

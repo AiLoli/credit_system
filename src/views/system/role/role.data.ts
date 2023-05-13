@@ -11,16 +11,6 @@ export const columns: BasicColumn[] = [
     width: 200,
   },
   {
-    title: '角色值',
-    dataIndex: 'roleValue',
-    width: 180,
-  },
-  {
-    title: '排序',
-    dataIndex: 'orderNo',
-    width: 50,
-  },
-  {
     title: '状态',
     dataIndex: 'status',
     width: 120,
@@ -88,12 +78,6 @@ export const formSchema: FormSchema[] = [
   {
     field: 'roleName',
     label: '角色名称',
-    required: true,
-    component: 'Input',
-  },
-  {
-    field: 'roleValue',
-    label: '角色值',
     required: true,
     component: 'Input',
   },

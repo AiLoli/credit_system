@@ -32,11 +32,6 @@ export const columns: BasicColumn[] = [
     dataIndex: 'role',
     width: 120,
   },
-  {
-    title: '家庭住址',
-    dataIndex: 'address',
-    width: 180,
-  },
 ];
 
 export const searchFormSchema: FormSchema[] = [

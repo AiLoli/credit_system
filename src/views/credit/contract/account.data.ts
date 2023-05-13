@@ -8,6 +8,11 @@ export const columns: BasicColumn[] = [
     width: 120,
   },
   {
+    title: '身份证号',
+    dataIndex: 'idCard',
+    width: 200,
+  },
+  {
     title: '性别',
     dataIndex: 'gender',
     width: 120,
@@ -25,7 +30,7 @@ export const columns: BasicColumn[] = [
   {
     title: '申请金额',
     dataIndex: 'applyAmount',
-    width: 200,
+    width: 120,
   },
   {
     title: '创建时间',
@@ -33,8 +38,9 @@ export const columns: BasicColumn[] = [
     width: 180,
   },
   {
-    title: '备注',
-    dataIndex: 'remark',
+    title: '状态',
+    dataIndex: 'status',
+    width: 120,
   },
 ];
 

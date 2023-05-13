@@ -6,7 +6,7 @@
         <a-button type="primary" @click="handleCreate">新增账号</a-button>
         <a-button @click="showExcelModal">Excel导入</a-button>
         <a-modal v-model:visible="visible" title="上传Excel文件" @ok="handleOk">
-          <a-button style="left: 180px" type="primary" class="my-4" @click="handleDownloadByBase64">
+          <a-button style="left: 170px" type="primary" class="my-4" @click="handleDownloadByBase64">
             模版下载
           </a-button>
           <a-upload
